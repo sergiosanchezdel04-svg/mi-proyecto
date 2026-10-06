@@ -1,0 +1,20 @@
+name: Ejecutar Python
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  ejecutar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el codigo
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Ejecutar script
+        run: python nombre_fecha.py
